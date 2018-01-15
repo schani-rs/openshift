@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yml
+    kompose.version: 1.6.0 (e4adfef)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: library
+  name: library
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: library
+    spec:
+      containers:
+      - env:
+        - name: DATABASE_URL
+          value: postgres://library:474FZLnQsRvQ4uzsoJ2JpTTi3WeYA5BP@library-db:5432/schani_library
+        image: schanirs/library
+        name: library
+        ports:
+        - containerPort: 8000
+        resources: {}
+      restartPolicy: Always
+status: {}

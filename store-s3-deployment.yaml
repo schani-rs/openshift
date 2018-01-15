@@ -1,0 +1,41 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yml
+    kompose.version: 1.6.0 (e4adfef)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: store-s3
+  name: store-s3
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: store-s3
+    spec:
+      containers:
+      - args:
+        - server
+        - /data
+        env:
+        - name: MINIO_ACCESS_KEY
+          value: CMDBEHZNRIW1UA6AQ80W
+        - name: MINIO_SECRET_KEY
+          value: 9Wh/pknTtRVTzwyBo3HCdCXVYusegHWcBjT4g6cR
+        image: minio/minio
+        name: store-s3
+        resources: {}
+        volumeMounts:
+        - mountPath: /data
+          name: store-storage
+      restartPolicy: Always
+      volumes:
+      - name: store-storage
+        persistentVolumeClaim:
+          claimName: store-storage
+status: {}
