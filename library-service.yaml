@@ -10,8 +10,8 @@ metadata:
   name: library
 spec:
   ports:
-  - name: "8003"
-    port: 8003
+  - name: "8000"
+    port: 8000
     targetPort: 8000
   selector:
     io.kompose.service: library

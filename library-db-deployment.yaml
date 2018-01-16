@@ -30,7 +30,7 @@ spec:
         name: library-db
         resources: {}
         volumeMounts:
-        - mountPath: /var/lib/mysql
+        - mountPath: /var/lib/postgresql/data
           name: library-db-storage
       restartPolicy: Always
       volumes:

@@ -20,21 +20,21 @@ spec:
     spec:
       containers:
       - env:
-        - name: POSTGRES_DB
+        - name: POSTGRESQL_DATABASE
           value: schani_import
-        - name: POSTGRES_PASSWORD
+        - name: POSTGRESQL_PASSWORD
           value: BSStykoth4XneRoAguZx
-        - name: POSTGRES_USER
+        - name: POSTGRESQL_USER
           value: import
-        image: postgres
+        image: centos/postgresql-95-centos7
         name: import-db
         resources: {}
         volumeMounts:
-        - mountPath: /var/lib/mysql
-          name: library-db-storage
+        - mountPath: /var/lib/postgresql/data
+          name: import-db-storage
       restartPolicy: Always
       volumes:
-      - name: library-db-storage
+      - name: import-db-storage
         persistentVolumeClaim:
-          claimName: library-db-storage
+          claimName: import-db-storage
 status: {}

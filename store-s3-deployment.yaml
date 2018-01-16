@@ -19,15 +19,12 @@ spec:
         io.kompose.service: store-s3
     spec:
       containers:
-      - args:
-        - server
-        - /data
-        env:
+      - env:
         - name: MINIO_ACCESS_KEY
           value: CMDBEHZNRIW1UA6AQ80W
         - name: MINIO_SECRET_KEY
           value: 9Wh/pknTtRVTzwyBo3HCdCXVYusegHWcBjT4g6cR
-        image: minio/minio
+        image: icereed/openshift-minio
         name: store-s3
         resources: {}
         volumeMounts:

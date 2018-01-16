@@ -30,7 +30,7 @@ spec:
         - name: ROCKET_ADDRESS
           value: 0.0.0.0
         - name: STORAGE_HOST
-          value: http://store_s3:9000
+          value: http://store-s3:9000
         image: schanirs/store
         name: store
         ports:
