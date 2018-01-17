@@ -28,7 +28,7 @@ spec:
         name: store-s3
         resources: {}
         volumeMounts:
-        - mountPath: /data
+        - mountPath: /opt/minio/data
           name: store-storage
       restartPolicy: Always
       volumes:

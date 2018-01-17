@@ -22,7 +22,7 @@ spec:
       - env:
         - name: STORE_URL
           value: http://store:8000
-        image: schanirs/thumbnailer
+        image: schanirs/thumbnailer:latest
         name: thumbnailer
         ports:
         - containerPort: 8000

@@ -27,7 +27,7 @@ spec:
           value: http://library:8000
         - name: STORE_URL
           value: http://store:8000
-        image: schanirs/import
+        image: schanirs/import:latest
         name: import
         ports:
         - containerPort: 8000

@@ -21,7 +21,7 @@ spec:
       - env:
         - name: DATABASE_URL
           value: postgres://library:474FZLnQsRvQ4uzsoJ2JpTTi3WeYA5BP@library-db:5432/schani_library
-        image: schanirs/library
+        image: schanirs/library:latest
         name: library
         ports:
         - containerPort: 8000

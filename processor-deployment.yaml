@@ -25,7 +25,7 @@ spec:
           value: http://library:8000
         - name: STORE
           value: http://store:8000
-        image: schanirs/processor
+        image: schanirs/processor:latest
         name: processor
         resources: {}
       restartPolicy: Always
